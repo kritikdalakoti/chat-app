@@ -1,5 +1,5 @@
 
-const express= require('express')
+const express=  require('express')
 const {generatemessage,generatelocation} =require('./utils/messages')
 const http=require('http')//just a refactoring this is also creating a server only like express.
 
@@ -8,6 +8,7 @@ const Filter=require('bad-words')
 const app=express()
 
 const server=http.createServer(app)
+
 const io=socket(server)//thats why we created a raw http server as socket.io requires that only so that it could fit here with express server it was not possible.
 //and this above created server called 'server ' is same as the express server and also now supports socket.io
 const port=process.env.PORT||3000
